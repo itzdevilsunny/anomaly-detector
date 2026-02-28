@@ -5,7 +5,7 @@ import { useAlertStore } from '../../store/useAlertStore';
 import type { AnomalyAlert } from '../../store/useAlertStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    Navigation, ExternalLink, ShieldAlert, MapPin, Radio,
+    Navigation, ExternalLink, ShieldAlert, Radio,
     Clock, Route, X, Camera, AlertTriangle, Shield, Crosshair,
 } from 'lucide-react';
 
@@ -215,15 +215,15 @@ export default function ZoneMap() {
                             >
                                 <div className="flex items-center gap-2 mb-1">
                                     <div className={`w-2 h-2 rounded-full shrink-0 ${alert.severity === 'Critical' ? 'bg-red-500 animate-pulse'
-                                            : alert.severity === 'Medium' ? 'bg-orange-500'
-                                                : 'bg-yellow-500'
+                                        : alert.severity === 'Medium' ? 'bg-orange-500'
+                                            : 'bg-yellow-500'
                                         }`} />
                                     <span className="text-xs font-bold text-white truncate">
                                         {TYPE_LABELS[alert.type] || alert.type}
                                     </span>
                                     <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded ml-auto shrink-0 ${alert.severity === 'Critical' ? 'bg-red-500/20 text-red-400'
-                                            : alert.severity === 'Medium' ? 'bg-orange-500/20 text-orange-400'
-                                                : 'bg-yellow-500/20 text-yellow-400'
+                                        : alert.severity === 'Medium' ? 'bg-orange-500/20 text-orange-400'
+                                            : 'bg-yellow-500/20 text-yellow-400'
                                         }`}>
                                         {alert.severity}
                                     </span>
