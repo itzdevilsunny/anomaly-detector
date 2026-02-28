@@ -14,6 +14,9 @@ export const useSocket = () => {
     const addLiveNotification = useNotificationStore((s) => s.addLiveNotification);
 
     useEffect(() => {
+        // Prevent localhost connection errors on Vercel demo
+        if (window.location.hostname.includes('vercel.app')) return;
+
         // Connect to the Node.js API Gateway
         const socket = io(SOCKET_URL, {
             reconnectionAttempts: 5,
